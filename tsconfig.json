@@ -15,11 +15,19 @@
       "jsx": "react",
       "incremental": true,
       "rootDir": "src",
-      "baseUrl": "src",
+      "baseUrl": "./",
       "noUnusedLocals": true,
       "allowSyntheticDefaultImports": true,
       "strictNullChecks": true,
-      "strictBindCallApply": true
+      "strictBindCallApply": true,
+      "paths": {
+        "@atoms/*": ["src/stories/atoms/*"],
+        "@molecules/*": ["src/stories/molecules/*"],
+        "@organisms/*": ["src/stories/organisms/*"],
+        "@templates/*": ["src/stories/templates/*"],
+        "@assets/*": ["src/stories/assets/*"],
+        "@styles/*": ["src/styles/*"],
+      }
     },
     "include": ["src/**/*"],
     "exclude": ["node_modules"]
