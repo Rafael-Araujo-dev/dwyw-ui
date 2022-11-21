@@ -71,6 +71,7 @@
     "@storybook/preset-create-react-app": "^4.1.2",
     "@storybook/react": "^6.5.13",
     "@storybook/testing-library": "^0.0.13",
+    "@types/react": "^18.0.25",
     "babel-plugin-named-exports-order": "^0.0.2",
     "msw": "^0.42.0",
     "msw-storybook-addon": "^1.6.3",
