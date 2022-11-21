@@ -1,14 +1,14 @@
 import React from 'react';
 
-import { Page } from './Page';
-import * as HeaderStories from './Header.stories';
+import { Example } from './index';
+import * as HeaderStories from '../../molecules/Header/Header.stories';
 
 export default {
-  title: 'Example/Page',
-  component: Page,
+  title: 'Pages/Example',
+  component: Example,
 };
 
-const Template = (args) => <Page {...args} />;
+const Template = (args) => <Example {...args} />;
 
 export const LoggedIn = Template.bind({});
 LoggedIn.args = {
