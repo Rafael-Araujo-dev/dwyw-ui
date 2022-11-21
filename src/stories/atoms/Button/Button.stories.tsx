@@ -1,6 +1,8 @@
 import React from 'react';
 
-import { Button } from './index';
+import { Story } from '@storybook/react'
+
+import { Button, Props } from './index';
 
 export default {
   title: 'Atoms/Button',
@@ -8,11 +10,12 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-};
+}
 
-const Template = (args) => <Button {...args} />;
+const Template: Story<Props> = (args) => <Button {...args} />;
 
 export const Primary = Template.bind({});
+
 Primary.args = {
   primary: true,
   label: 'Button',
