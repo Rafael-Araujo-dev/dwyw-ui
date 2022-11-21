@@ -1,13 +1,15 @@
 import React from 'react';
 
-import { Header } from './index';
+import { Story } from '@storybook/react'
+
+import { Header, Props } from './index';
 
 export default {
   title: 'Molecules/Header',
   component: Header,
 };
 
-const Template = (args) => <Header {...args} />;
+const Template: Story<Props> = (args) => <Header {...args} />;
 
 export const LoggedIn = Template.bind({});
 LoggedIn.args = {

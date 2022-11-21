@@ -4,7 +4,14 @@ import PropTypes from 'prop-types';
 import { Button } from '../../atoms/Button';
 import './header.css';
 
-export const Header = ({ user, onLogin, onLogout, onCreateAccount }) => (
+export interface Props {
+  user: {} | null
+  onLogin: () => void
+  onLogout: () => void
+  onCreateAccount: () => void
+}
+
+export const Header: React.FC<Props> = ({ ...props}) => (
   <header>
     <div className="wrapper">
       <div>
@@ -27,12 +34,12 @@ export const Header = ({ user, onLogin, onLogout, onCreateAccount }) => (
         <h1>Acme</h1>
       </div>
       <div>
-        {user ? (
-          <Button size="small" onClick={onLogout} label="Log out" />
+        {props.user ? (
+          <Button size="small" onClick={props.onLogout} label="Log out" />
         ) : (
           <>
-            <Button size="small" onClick={onLogin} label="Log in" />
-            <Button primary size="small" onClick={onCreateAccount} label="Sign up" />
+            <Button size="small" onClick={props.onLogin} label="Log in" />
+            <Button primary size="small" onClick={props.onCreateAccount} label="Sign up" />
           </>
         )}
       </div>
