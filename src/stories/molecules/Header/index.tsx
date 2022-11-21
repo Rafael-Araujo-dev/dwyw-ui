@@ -5,10 +5,10 @@ import { Button } from '../../atoms/Button';
 import './header.css';
 
 export interface Props {
-  user: {} | null
-  onLogin: () => void
-  onLogout: () => void
-  onCreateAccount: () => void
+  user?: {} | null
+  onLogin?: () => void
+  onLogout?: () => void
+  onCreateAccount?: () => void
 }
 
 export const Header: React.FC<Props> = ({ ...props}) => (

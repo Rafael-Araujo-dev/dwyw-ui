@@ -18,7 +18,8 @@
       "baseUrl": "src",
       "noUnusedLocals": true,
       "allowSyntheticDefaultImports": true,
-      "strictNullChecks": true
+      "strictNullChecks": true,
+      "strictBindCallApply": true
     },
     "include": ["src/**/*"],
     "exclude": ["node_modules"]

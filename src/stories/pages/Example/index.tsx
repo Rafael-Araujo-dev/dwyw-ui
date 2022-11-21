@@ -1,12 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Header } from '../../molecules/Header';
+
+import { Header, Props as HeaderProps } from '../../molecules/Header';
 import './example.css';
 
-export const Example = ({ user, onLogin, onLogout, onCreateAccount }) => (
+export interface Props extends HeaderProps {}
+
+export const Example: React.FC<Props> = ({...props}) => (
   <article>
-    <Header user={user} onLogin={onLogin} onLogout={onLogout} onCreateAccount={onCreateAccount} />
+    <Header user={props.user} onLogin={props.onLogin} onLogout={props.onLogout} onCreateAccount={props.onCreateAccount} />
 
     <section>
       <h2>Pages in Storybook</h2>
@@ -59,6 +62,7 @@ export const Example = ({ user, onLogin, onLogout, onCreateAccount }) => (
     </section>
   </article>
 );
+
 Example.propTypes = {
   user: PropTypes.shape({}),
   onLogin: PropTypes.func.isRequired,
@@ -67,5 +71,5 @@ Example.propTypes = {
 };
 
 Example.defaultProps = {
-  user: null,
+  user: null
 };
