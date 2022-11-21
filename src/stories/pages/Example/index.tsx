@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 
-import { Header, Props as HeaderProps } from '../../molecules/Header';
+import { Header, Props as HeaderProps } from '@molecules/Header';
 import './example.css';
 
 export interface Props extends HeaderProps {}

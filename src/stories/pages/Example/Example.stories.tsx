@@ -3,7 +3,7 @@ import React from 'react';
 import { Story } from '@storybook/react';
 
 import { Example, Props } from './index';
-import * as HeaderStories from '../../molecules/Header/Header.stories';
+import * as HeaderStories from '@molecules/Header/Header.stories';
 
 export default {
   title: 'Pages/Example',
