@@ -39,7 +39,7 @@ export const Header: React.FC<Props> = ({ ...props}) => (
         ) : (
           <>
             <Button size="small" onClick={props.onLogin} label="Log in" />
-            <Button primary size="small" onClick={props.onCreateAccount} label="Sign up" />
+            <Button mode="primary" size="small" onClick={props.onCreateAccount} label="Sign up" />
           </>
         )}
       </div>
