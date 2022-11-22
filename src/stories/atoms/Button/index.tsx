@@ -68,14 +68,37 @@ const extractStyles = (styleString: string, props: Props) => {
 
         for (let i = 0; i < args.length; i++) {
           let arg: string[] = args[i].split(':')
+
           let boolean = undefined
-          
+          let color = undefined
+
+          // Check if value is a boolean
           if (arg[1] === 'false') boolean = false
             else if (arg[1] === 'true') boolean = true
 
+          // Check if value is a color property
+          if (arg[1] && arg[1].includes('!hex')) { // Converts to hex string
+            color = '#' + arg[1].replace(/[!hex()]/g,'')
+          } else if (arg[1] && arg[1].includes('!rgb')) { // Converts to rgb string
+            color = arg[1].replace('!','')
+          } else if (arg[1] && arg[1].includes('!rgba')) { // Converts to rgba string
+            color = arg[1].replace('!','')
+          } else if (arg[1] && arg[1].includes('!hsla')) { // Converts to hsla string
+            color = arg[1].replace(/[!hsla()]/g,'')
+            color = color.split(',')
+            color = `hsla(${color[0]}, ${color[1]}%, ${color[2]}%, ${color[3]})`
+          }
+
+          let value: string | boolean | number | void = ''
+
+          // Set the corresponding property value
+          if (boolean !== undefined) value = boolean
+          else if (color !== undefined) value = color
+          else value = arg[1]
+
           props = {
             ...props,
-            [arg[0]]: boolean !== undefined ? boolean : arg[1]	
+            [arg[0]]: value	
           }
         }
       }
