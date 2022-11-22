@@ -1,34 +1,56 @@
 {
-    "compilerOptions": {
-      "target": "es5",
-      "lib": ["es5", "es6", "es7", "es2017", "dom"],
-      "allowJs": true,
-      "skipLibCheck": true,
-      "strict": true,
-      "forceConsistentCasingInFileNames": true,
-      "noEmit": true,
-      "esModuleInterop": true,
-      "module": "commonjs",
-      "moduleResolution": "node",
-      "resolveJsonModule": true,
-      "isolatedModules": true,
-      "jsx": "react",
-      "incremental": true,
-      "rootDir": "src",
-      "baseUrl": "./",
-      "noUnusedLocals": true,
-      "allowSyntheticDefaultImports": true,
-      "strictNullChecks": true,
-      "strictBindCallApply": true,
-      "paths": {
-        "@atoms/*": ["src/stories/atoms/*"],
-        "@molecules/*": ["src/stories/molecules/*"],
-        "@organisms/*": ["src/stories/organisms/*"],
-        "@templates/*": ["src/stories/templates/*"],
-        "@assets/*": ["src/stories/assets/*"],
-        "@styles/*": ["src/styles/*"],
-      }
-    },
-    "include": ["src/**/*"],
-    "exclude": ["node_modules"]
-  }
+  "compilerOptions": {
+    "target": "es5",
+    "lib": [
+      "es5",
+      "es6",
+      "es7",
+      "es2017",
+      "dom"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "rootDir": "./",
+    "baseUrl": "./",
+    "noUnusedLocals": true,
+    "allowSyntheticDefaultImports": true,
+    "strictNullChecks": true,
+    "strictBindCallApply": true,
+    "paths": {
+      "@atoms/*": [
+        "src/stories/atoms/*"
+      ],
+      "@molecules/*": [
+        "src/stories/molecules/*"
+      ],
+      "@organisms/*": [
+        "src/stories/organisms/*"
+      ],
+      "@templates/*": [
+        "src/stories/templates/*"
+      ],
+      "@assets/*": [
+        "src/stories/assets/*"
+      ],
+      "@styles/*": [
+        "src/styles/*"
+      ]
+    }
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
