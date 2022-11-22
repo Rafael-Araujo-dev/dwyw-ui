@@ -1,3 +1,6 @@
+const webpack = require("webpack");
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
+
 module.exports = {
   stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
   staticDirs: ["../public"],
@@ -25,8 +28,11 @@ module.exports = {
   },
   webpackFinal: async (config, { configType }) => {
       config.resolve.plugins = [new TsconfigPathsPlugin()];
+      // Removing Speedy so the static storybook styling doesn't break
+      new webpack.DefinePlugin({
+        SC_DISABLE_SPEEDY: true
+      })
       return config;
-  }
+  },
+  
 };
-
-const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
