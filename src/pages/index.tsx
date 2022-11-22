@@ -1,22 +1,34 @@
-import { useState } from 'react'
-
-import { Button } from '@atoms/Button'
+import { Button, Props as ButtonProps } from '@atoms/Button'
 
 function Home() {
 
-  const [outline, setOutline] = useState(false)
+  const handleButtonClick = (message?: string) => console.log(message)
 
-  const handleOutline = () => setOutline(!outline)
-
-  const buttons = {
+  const buttons: { [key: string]: ButtonProps } = {
+    default: {
+      mode: 'default',
+      onClick: () => handleButtonClick('Default Button'),
+      outline: false,
+      label: 'Default',
+      fill: false,
+      width: 'auto',
+    },
     primary: {
       mode: 'primary',
-      onClick: handleOutline,
+      onClick: () => handleButtonClick('Primary Button'),
       outline: false,
       label: 'Primary',
       fill: false,
       width: 'auto',
-      styleString: 'http://localhost:6006/?path=/story/atoms-button--primary&args=size:large;label:tetse;width:100%'
+      styleString: 'http://localhost:6006/?path=/story/atoms-button--primary&args=color:!hex(050505);colorHover:!hex(f6e610);backgroundColor:!hex(fffc00);backgroundColorHover:!hex(000000);'
+    },
+    secondary: {
+      mode: 'secondary',
+      onClick: () => handleButtonClick('Secondary Button'),
+      outline: false,
+      label: 'Secondary',
+      fill: false,
+      width: 'auto',
     }
   }
 
