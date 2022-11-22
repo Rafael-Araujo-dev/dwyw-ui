@@ -22,15 +22,13 @@ function Home() {
 
   return (
     <>
-    {/* {outline.toString()} */}
       {
         Object.values(buttons).map((btn, index) => {
 
-          console.log({btn})
           return <Button
             key={index}
             mode={btn.mode}
-            outline={outline}
+            outline={btn.outline}
             fill={btn.fill}
             width={btn.width}
             onClick={btn.onClick}
