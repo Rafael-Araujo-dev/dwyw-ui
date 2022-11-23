@@ -9,6 +9,7 @@ module.exports = {
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
     "@storybook/preset-create-react-app",
+    "@storybook/addon-a11y",
     "../src/addons/themes-dwyw/preset.js",
   ],
   framework: "@storybook/react",
