@@ -75,6 +75,20 @@ Success.args = {
   success: true,
 };
 
+export const Danger = Template.bind({});
+Danger.args = {
+  children: 'Button',
+  outline: false,
+  danger: true,
+};
+
+export const Warning = Template.bind({});
+Warning.args = {
+  children: 'Button',
+  outline: false,
+  warning: true,
+};
+
 export const Large = Template.bind({});
 Large.args = {
   children: 'Button',
