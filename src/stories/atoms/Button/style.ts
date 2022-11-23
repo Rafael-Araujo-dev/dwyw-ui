@@ -131,11 +131,11 @@ export const Container = styled.button<Props>`
             ` : ``}
         ` ||
         (props.variant === 'warning' || props.warning ) && `
-            color: #000000;
+            color: #333333;
             background-color: #FFC107;
 
             &:hover {
-                color: #000000;
+                color: #333333;
                 background-color: #AA8004;
             }
 
@@ -145,7 +145,7 @@ export const Container = styled.button<Props>`
                 border: 2px solid #FFC107;
 
                 &:hover {
-                    color: #000000;
+                    color: #333333;
                     background-color: #FFC107;
                 }
             ` : ``}
