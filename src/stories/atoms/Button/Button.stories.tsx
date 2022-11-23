@@ -12,7 +12,6 @@ export default {
       type: 'string',
       options: ['default', 'primary', 'secondary', 'success', 'warning', 'danger', 'info', 'light', 'dark', 'link'],
       control: 'select',
-      defaultValue: 'default',
     },
     fill: {
       control: 'boolean',
@@ -44,7 +43,6 @@ const Template: Story<Props> = (args) => <Button {...args} />;
 export const Default = Template.bind({});
 Default.args = {
   children: 'Button',
-  variant: 'default',
   outline: false,
 };
 

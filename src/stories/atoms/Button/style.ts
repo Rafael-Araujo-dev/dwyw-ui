@@ -7,6 +7,8 @@ interface Props {
     width?: string
     styles?: {}
     outline?: boolean
+    primary?: boolean
+    secondary?: boolean
 }
 
 export const Container = styled.button<Props>`
@@ -44,7 +46,7 @@ export const Container = styled.button<Props>`
                 }
             ` : ``}
         ` ||
-        props.variant === 'primary' && `
+        (props.variant === 'primary' || props.primary ) && `
             color: #FFFFFF;
             background-color: #1EA7FD;
 
@@ -64,7 +66,7 @@ export const Container = styled.button<Props>`
                 }
             ` : ``}
         ` ||
-        props.variant === 'secondary' && `
+        (props.variant === 'secondary' || props.secondary ) && `
             color: #FFFFFF;
             background-color: #333333;
 

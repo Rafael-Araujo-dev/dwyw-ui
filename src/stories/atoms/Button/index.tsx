@@ -41,12 +41,20 @@ export interface Props extends HTMLAttributes<HTMLButtonElement> {
   stylesOnHover?: {}
   /** Defines the button content */
   children?: React.ReactNode
+
+  primary?: boolean
+  secondary?: boolean
+  success?: boolean
+  warning?: boolean
+  danger?: boolean
+  info?: boolean
+  dark?: boolean
+  link?: boolean
 }
 
 export const Button: React.FC<Props> = ({...props }) => {
-  
   props = props.styleString ? extractStyles(props.styleString, props) : props
-
+  
   return (
     <Container
       {...props}
@@ -67,7 +75,6 @@ export const Button: React.FC<Props> = ({...props }) => {
 };
 
 Button.defaultProps = {
-  variant: 'default',
   outline: false,
   size: 'medium',
 };
