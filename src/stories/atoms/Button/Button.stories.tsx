@@ -68,6 +68,13 @@ Secondary.args = {
   secondary: true,
 };
 
+export const Success = Template.bind({});
+Success.args = {
+  children: 'Button',
+  outline: false,
+  success: true,
+};
+
 export const Large = Template.bind({});
 Large.args = {
   children: 'Button',
