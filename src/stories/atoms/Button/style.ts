@@ -9,6 +9,9 @@ interface Props {
     outline?: boolean
     primary?: boolean
     secondary?: boolean
+    success?: boolean
+    danger?: boolean
+    warning?: boolean
 }
 
 export const Container = styled.button<Props>`
@@ -26,7 +29,7 @@ export const Container = styled.button<Props>`
     border: 2px solid transparent;
 
     ${ props => // variant
-        (!props.primary && !props.secondary) &&
+        (!props.primary && !props.secondary && !props.success && !props.danger && !props.warning) &&
         (props.variant === 'default' || props.variant === undefined) && `
             color: #333333;
             background-color: #F0F0F0;
@@ -84,6 +87,66 @@ export const Container = styled.button<Props>`
                 &:hover {
                     color: #FFFFFF;
                     background-color: #333333;
+                }
+            ` : ``}
+        ` ||
+        (props.variant === 'success' || props.success ) && `
+            color: #FFFFFF;
+            background-color: #1F8035;
+
+            &:hover {
+                color: #FFFFFF;
+                background-color: #145523;
+            }
+
+            ${props.outline ? `
+                background-color: transparent;
+                color: #1F8035;
+                border: 2px solid #1F8035;
+
+                &:hover {
+                    color: #FFFFFF;
+                    background-color: #1F8035;
+                }
+            ` : ``}
+        ` ||
+        (props.variant === 'danger' || props.danger ) && `
+            color: #FFFFFF;
+            background-color: #C32232;
+
+            &:hover {
+                color: #FFFFFF;
+                background-color: #821621;
+            }
+
+            ${props.outline ? `
+                background-color: transparent;
+                color: #C32232;
+                border: 2px solid #C32232;
+
+                &:hover {
+                    color: #FFFFFF;
+                    background-color: #C32232;
+                }
+            ` : ``}
+        ` ||
+        (props.variant === 'warning' || props.warning ) && `
+            color: #000000;
+            background-color: #FFC107;
+
+            &:hover {
+                color: #000000;
+                background-color: #AA8004;
+            }
+
+            ${props.outline ? `
+                background-color: transparent;
+                color: #FFC107;
+                border: 2px solid #FFC107;
+
+                &:hover {
+                    color: #000000;
+                    background-color: #FFC107;
                 }
             ` : ``}
         `

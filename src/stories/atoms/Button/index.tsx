@@ -4,11 +4,11 @@ import { Container } from './style'
 
 export interface Props extends HTMLAttributes<HTMLButtonElement> {
   /**  Select the button variant */
-  variant?: string
+  variant?: 'default' | 'primary' | 'secondary' | 'success' | 'warning' | 'danger' | 'info' | 'light' | 'dark'
   /** Disable button background color */
   outline?: boolean
   /** Sets the font size */
-  size?: string
+  size?: 'small' | 'medium' | 'large'
   /** Sets the button to fill the full-width parent */
   fill?: boolean
   /** Defines the button width */
@@ -85,7 +85,10 @@ const extractStyles = (styleString: string, props: Props) => {
   let args: string | string[] = ''
 
   if (styles) {
-    props.variant = styles[0].replace('atoms-button--','')
+    let variant: any = props.variant
+    variant = styles[0].replace('atoms-button--','')
+    props.variant = variant
+    
     args = styles[1] && styles[1].replace('args=','')
 
       if (args) {
