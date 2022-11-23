@@ -45,6 +45,7 @@ Default.args = {
   mode: 'default',
   label: 'Button',
   outline: false,
+  onClick: undefined,
 };
 
 export const Primary = Template.bind({});
@@ -52,6 +53,7 @@ Primary.args = {
   mode: 'primary',
   label: 'Button',
   outline: false,
+  onClick: undefined,
 };
 
 export const Secondary = Template.bind({});
@@ -59,6 +61,7 @@ Secondary.args = {
   mode: 'secondary',
   label: 'Button',
   outline: false,
+  onClick: undefined,
 };
 
 export const Large = Template.bind({});
@@ -66,6 +69,7 @@ Large.args = {
   size: 'large',
   label: 'Button',
   outline: false,
+  onClick: undefined,
 };
 
 export const Small = Template.bind({});
@@ -73,4 +77,5 @@ Small.args = {
   size: 'small',
   label: 'Button',
   outline: false,
+  onClick: undefined,
 };
