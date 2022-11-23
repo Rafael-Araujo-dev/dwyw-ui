@@ -57,15 +57,15 @@ Default.args = {
 export const Primary = Template.bind({});
 Primary.args = {
   children: 'Button',
-  variant: 'primary',
   outline: false,
+  primary: true,
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
   children: 'Button',
-  variant: 'secondary',
   outline: false,
+  secondary: true,
 };
 
 export const Large = Template.bind({});
