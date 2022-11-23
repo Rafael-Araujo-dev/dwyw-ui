@@ -8,7 +8,7 @@ export interface Props extends HTMLAttributes<HTMLButtonElement> {
   /** Disable button background color */
   outline?: boolean
   /** Sets the font size */
-  size: 'small' | 'medium' | 'large'
+  size?: 'small' | 'medium' | 'large'
   /** Sets the button to fill the full-width parent */
   fill?: boolean
   /** Defines the button width */
