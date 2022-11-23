@@ -36,18 +36,19 @@ function Home() {
     <>
       {
         Object.values(buttons).map((btn, index) => {
-
-          return <Button
-            key={index}
-            variant={btn.variant}
-            outline={btn.outline}
-            fill={btn.fill}
-            width={btn.width}
-            onClick={btn.onClick}
-            styleString={btn.styleString}
-          >
-            {btn.children}
-          </Button>
+          return (
+            <Button
+              key={index}
+              variant={btn.variant}
+              outline={btn.outline}
+              fill={btn.fill}
+              width={btn.width}
+              onClick={btn.onClick}
+              styleString={btn.styleString}
+            >
+              {btn.children}
+            </Button>
+          )
         })
       }
     </>
