@@ -26,6 +26,7 @@ export const Container = styled.button<Props>`
     border: 2px solid transparent;
 
     ${ props => // variant
+        (!props.primary && !props.secondary) &&
         (props.variant === 'default' || props.variant === undefined) && `
             color: #333333;
             background-color: #F0F0F0;
