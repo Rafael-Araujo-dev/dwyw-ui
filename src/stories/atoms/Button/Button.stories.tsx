@@ -8,10 +8,10 @@ export default {
   title: 'Atoms/Button',
   component: Button,
   argTypes: {
-    mode: {
+    variant: {
       type: 'string',
       options: ['default', 'primary', 'secondary', 'success', 'warning', 'danger', 'info', 'light', 'dark', 'link'],
-      control: { type: 'select' },
+      control: 'select',
       defaultValue: 'default',
     },
     fill: {
@@ -24,17 +24,18 @@ export default {
     },
     size: {
       options: ['small', 'medium', 'large'],
-      control: { type: 'select' },
+      control: 'select',
       defaultValue: 'medium',
     },
-    label: { 
-      type: { name: 'string', required: true },
-      control: 'text'
+    children: {
+      control: 'text',
+      defaultValue: 'Button',
     },
     width: { control: 'text', },
     styleString: { control: 'text', },
     styles: { control: 'object', },
     stylesOnHover: { control: 'object', },
+    onClick: { action: 'clicked', },
   }
 }
 
@@ -42,40 +43,35 @@ const Template: Story<Props> = (args) => <Button {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  mode: 'default',
-  label: 'Button',
+  children: 'Button',
+  variant: 'default',
   outline: false,
-  onClick: undefined,
 };
 
 export const Primary = Template.bind({});
 Primary.args = {
-  mode: 'primary',
-  label: 'Button',
+  children: 'Button',
+  variant: 'primary',
   outline: false,
-  onClick: undefined,
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
-  mode: 'secondary',
-  label: 'Button',
+  children: 'Button',
+  variant: 'secondary',
   outline: false,
-  onClick: undefined,
 };
 
 export const Large = Template.bind({});
 Large.args = {
+  children: 'Button',
   size: 'large',
-  label: 'Button',
   outline: false,
-  onClick: undefined,
 };
 
 export const Small = Template.bind({});
 Small.args = {
+  children: 'Button',
   size: 'small',
-  label: 'Button',
   outline: false,
-  onClick: undefined,
 };

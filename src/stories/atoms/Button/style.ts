@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 interface Props {
-    mode?: string
+    variant?: string
     size?: string
     fill?: boolean
     width?: string
@@ -23,8 +23,8 @@ export const Container = styled.button<Props>`
     transition-timing-function: ease;
     border: 2px solid transparent;
 
-    ${ props => // mode
-        props.mode === 'default' && `
+    ${ props => // variant
+        props.variant === 'default' && `
             color: #333333;
             background-color: #F0F0F0;
         
@@ -34,7 +34,7 @@ export const Container = styled.button<Props>`
             }
 
             ${props.outline ? `
-                background-color: #FFFFFF;
+                background-color: transparent;
                 color: #333333;
                 border: 2px solid #A0A0A0;
 
@@ -44,7 +44,7 @@ export const Container = styled.button<Props>`
                 }
             ` : ``}
         ` ||
-        props.mode === 'primary' && `
+        props.variant === 'primary' && `
             color: #FFFFFF;
             background-color: #1EA7FD;
 
@@ -54,7 +54,7 @@ export const Container = styled.button<Props>`
             }
 
             ${props.outline ? `
-                background-color: #FFFFFF;
+                background-color: transparent;
                 color: #1EA7FD;
                 border: 2px solid #1EA7FD;
 
@@ -64,7 +64,7 @@ export const Container = styled.button<Props>`
                 }
             ` : ``}
         ` ||
-        props.mode === 'secondary' && `
+        props.variant === 'secondary' && `
             color: #FFFFFF;
             background-color: #333333;
 
@@ -74,7 +74,7 @@ export const Container = styled.button<Props>`
             }
 
             ${props.outline ? `
-                background-color: #FFFFFF;
+                background-color: transparent;
                 color: #333333;
                 border: 2px solid #333333;
 

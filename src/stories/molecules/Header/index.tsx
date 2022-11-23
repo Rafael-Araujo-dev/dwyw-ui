@@ -35,11 +35,17 @@ export const Header: React.FC<Props> = ({ ...props}) => (
       </div>
       <div>
         {props.user ? (
-          <Button size="small" onClick={props.onLogout} label="Log out" />
+          <Button size="small" onClick={props.onLogout}>
+            Log out
+          </Button>
         ) : (
           <>
-            <Button size="small" onClick={props.onLogin} label="Log in" />
-            <Button mode="primary" size="small" onClick={props.onCreateAccount} label="Sign up" />
+            <Button size="small" onClick={props.onLogin}>
+              Log in
+            </Button>
+            <Button variant="primary" size="small" onClick={props.onCreateAccount}>
+              Sign up
+            </Button>
           </>
         )}
       </div>

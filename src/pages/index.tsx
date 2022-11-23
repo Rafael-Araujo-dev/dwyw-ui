@@ -6,27 +6,27 @@ function Home() {
 
   const buttons: { [key: string]: ButtonProps } = {
     default: {
-      mode: 'default',
+      variant: 'default',
       onClick: () => handleButtonClick('Default Button'),
       outline: false,
-      label: 'Default',
+      children: 'Default',
       fill: false,
       width: 'auto',
     },
     primary: {
-      mode: 'primary',
+      variant: 'primary',
       onClick: () => handleButtonClick('Primary Button'),
       outline: false,
-      label: 'Primary',
+      children: 'Primary',
       fill: false,
       width: 'auto',
       styleString: 'http://localhost:6006/?path=/story/atoms-button--primary&args=color:!hex(050505);colorHover:!hex(f6e610);backgroundColor:!hex(fffc00);backgroundColorHover:!hex(000000);'
     },
     secondary: {
-      mode: 'secondary',
+      variant: 'secondary',
       onClick: () => handleButtonClick('Secondary Button'),
       outline: false,
-      label: 'Secondary',
+      children: 'Secondary',
       fill: false,
       width: 'auto',
     }
@@ -39,14 +39,14 @@ function Home() {
 
           return <Button
             key={index}
-            mode={btn.mode}
+            variant={btn.variant}
             outline={btn.outline}
             fill={btn.fill}
             width={btn.width}
             onClick={btn.onClick}
             styleString={btn.styleString}
           >
-            {btn.label}
+            {btn.children}
           </Button>
         })
       }
