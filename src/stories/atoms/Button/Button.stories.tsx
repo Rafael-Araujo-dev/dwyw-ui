@@ -14,11 +14,14 @@ export default {
       control: { type: 'select' },
       defaultValue: 'default',
     },
-    outline: { control: 'boolean' },
-    color: { control: 'color' },
-    colorHover: { control: 'color' },
-    backgroundColor: { control: 'color' },
-    backgroundColorHover: { control: 'color' },
+    fill: {
+      control: 'boolean',
+      defaultValue: false,
+    },
+    outline: {
+      control: 'boolean',
+      defaultValue: false,
+    },
     size: {
       options: ['small', 'medium', 'large'],
       control: { type: 'select' },
@@ -28,6 +31,10 @@ export default {
       type: { name: 'string', required: true },
       control: 'text'
     },
+    width: { control: 'text', },
+    styleString: { control: 'text', },
+    styles: { control: 'object', },
+    stylesOnHover: { control: 'object', },
   }
 }
 

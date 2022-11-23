@@ -5,10 +5,6 @@ import { Container } from './style'
 export interface Props extends React.ComponentPropsWithRef<'button'> {
   mode?: string
   outline?: boolean
-  color?: string
-  colorHover?: string
-  backgroundColor?: string
-  backgroundColorHover?: string
   size?: string
   label?: string
   fill?: boolean
@@ -16,6 +12,7 @@ export interface Props extends React.ComponentPropsWithRef<'button'> {
 
   styleString?: string
   styles?: {}
+  stylesOnHover?: {}
   children?: React.ReactNode
   onClick?: () => void
 }
@@ -30,13 +27,8 @@ export const Button: React.FC<Props> = ({...props }) => {
       mode={props.mode}
       size={props.size}
       styles={{
-        color: props.color,
-        backgroundColor: props.backgroundColor,
-        "&:hover": {
-          color: props.colorHover,
-          backgroundColor: props.backgroundColorHover,
-        },
-        ...props.styles
+        ...props.styles,
+        "&:hover": { ...props.stylesOnHover, }
       }}
       outline={props.outline}
       onClick={props.onClick}
