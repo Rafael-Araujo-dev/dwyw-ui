@@ -35,6 +35,14 @@ export default {
     styles: { control: 'object', },
     stylesOnHover: { control: 'object', },
     onClick: { action: 'clicked', },
+    primary: { control: false, },
+    secondary: { control: false, },
+    success: { control: false, },
+    warning: { control: false, },
+    danger: { control: false, },
+    info: { control: false, },
+    dark: { control: false, },
+    link: { control: false, },
   }
 }
 
