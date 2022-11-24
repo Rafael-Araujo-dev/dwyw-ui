@@ -18,6 +18,7 @@ export const Container = styled.button<Props>`
     font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-weight: 700;
     font-size: 14px;
+    margin: auto;
     padding: 9px 20px;
     border-radius: 6px;
     cursor: pointer;

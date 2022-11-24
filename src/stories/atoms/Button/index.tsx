@@ -1,6 +1,6 @@
 import React, { HTMLAttributes } from 'react';
 
-import { Container } from './style'
+import { Container } from './styles'
 
 export interface Props extends HTMLAttributes<HTMLButtonElement> {
   /**  Select the button variant */
