@@ -2,7 +2,7 @@ const webpack = require("webpack");
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 module.exports = {
-  stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
+  stories: ["../src/**/*.stories.@(js|jsx|ts|tsx|mdx)"],
   staticDirs: ["../public"],
   addons: [
     "@storybook/addon-links",
@@ -36,5 +36,8 @@ module.exports = {
       })
       return config;
   },
-  
+  env: (config) => ({
+    ...config,
+    PACKAGE_NAME: 'dwyw-ui'
+  })
 };
