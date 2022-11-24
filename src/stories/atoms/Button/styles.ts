@@ -169,7 +169,8 @@ export const Container = styled.button<Props>`
     }
 
     ${ props => `
-        width: ${props.fill ? '100%;' : props.width};
+        width: ${props.width};
+        ${props.fill && 'flex: 1; width: 100%;'}
     `}
 
     ${ props => props.styles }
