@@ -18,6 +18,7 @@ export const Container = styled.button<Props>`
     font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-weight: 700;
     font-size: 14px;
+    margin: auto;
     padding: 9px 20px;
     border-radius: 6px;
     cursor: pointer;
@@ -131,11 +132,11 @@ export const Container = styled.button<Props>`
             ` : ``}
         ` ||
         (props.variant === 'warning' || props.warning ) && `
-            color: #000000;
+            color: #333333;
             background-color: #FFC107;
 
             &:hover {
-                color: #000000;
+                color: #333333;
                 background-color: #AA8004;
             }
 
@@ -145,7 +146,7 @@ export const Container = styled.button<Props>`
                 border: 2px solid #FFC107;
 
                 &:hover {
-                    color: #000000;
+                    color: #333333;
                     background-color: #FFC107;
                 }
             ` : ``}
@@ -168,7 +169,8 @@ export const Container = styled.button<Props>`
     }
 
     ${ props => `
-        width: ${props.fill ? '100%;' : props.width};
+        width: ${props.width};
+        ${props.fill && 'flex: 1; width: 100%;'}
     `}
 
     ${ props => props.styles }

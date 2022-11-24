@@ -1,0 +1,125 @@
+import { ArgsTable, Meta, Story, Canvas, Source } from '@storybook/addon-docs'
+
+import { Button, Props } from './index'
+import { Container } from '../Container'
+import { argTypes } from 'types.ts'
+import { Default, Primary, Secondary, Success, Warning, Danger, Large, Medium, Small } from 'templates.ts'
+
+<Meta 
+    title="Atoms/Button"
+    component={Button}
+    argTypes={argTypes}
+/>
+
+export const Template = (args) => <Button {...args} />
+
+# Button
+
+Let's define a story for our `Button` component:
+
+<Button {...Primary}>
+    Button
+</Button>
+
+
+<Source
+    language='javascript'
+    format={true}
+    dark
+    code={`
+        import { Button } from "${process.env.PACKAGE_NAME}";
+        
+        <Button primary>
+            Button
+        </Button>
+    `}
+/>
+
+<Canvas>
+    <Story name='Default' args={Default}>
+        {Template.bind({})}
+    </Story>
+    <Story name='Primary' args={Primary}>
+        {Template.bind({})}
+    </Story>
+    <Story name='Secondary'args={Secondary}
+    >
+        {Template.bind({})}
+    </Story>
+    <Story name='Success' args={Success}>
+        {Template.bind({})}
+    </Story>
+    <Story name='Warning' args={Warning}>
+        {Template.bind({})}
+    </Story>
+    <Story name='Danger' args={Danger}>
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+
+# Outline
+<Canvas>
+    <Button {...Default} outline />
+    <Button {...Primary} outline />
+    <Button {...Secondary} outline />
+    <Button {...Success} outline />
+    <Button {...Warning} outline />
+    <Button {...Danger} outline />
+</Canvas>
+
+# Size
+<Canvas>
+    <Story name='Large' args={Large}>
+        {Template.bind({})}
+    </Story>
+    <Story name='Medium' args={Medium}>
+        {Template.bind({})}
+    </Story>
+    <Story name='Small' args={Small}>
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+# Fill
+<Canvas>
+<body>
+<Container flex gap="20px" padding="10px 0">
+    <Button {...Primary} fill />
+    <Button {...Secondary} fill />
+</Container>
+<Container flex gap="20px" padding="10px 0" column>
+    <Button {...Warning} fill />
+    <Button {...Success} fill />
+</Container>
+<Container flex gap="20px" padding="10px 0" wrap>
+    <Button {...Primary} fill />
+    <Button {...Secondary} fill />
+    <Button {...Success} fill />
+    <Button {...Warning} fill />
+    <Button {...Danger} fill />
+    <Button {...Secondary} fill />
+    <Button {...Success} fill />
+    <Button {...Warning} fill />
+    <Button {...Danger} fill />
+</Container>
+</body>
+</Canvas>
+
+# Width
+<Canvas>
+<Container flex gap="20px" padding="10px 0">
+    <Button {...Primary} width="40%">
+        40%
+    </Button>
+    <Button {...Secondary} width="25%">
+        25%
+    </Button>
+    <Button {...Warning} width="35%">
+        35%
+    </Button>
+</Container>
+</Canvas>
+
+# Properties
+<ArgsTable story='Default'/>
